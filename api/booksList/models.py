@@ -7,8 +7,8 @@ from books.models import Book
 User = settings.AUTH_USER_MODEL
 
 
-class BookList(models.Model):
-    name = models.CharField(max_length=16)
-    books = models.OneToOneField(Book, on_delete=models.CASCADE, blank=True)
+class WishList(models.Model):
+    name = models.CharField(max_length=32)
+    books = models.ManyToManyField(Book, blank=True, related_name='books')
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     is_public = models.BooleanField(default=False)
