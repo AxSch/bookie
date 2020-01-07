@@ -31,4 +31,4 @@ class Book(models.Model):
     ]
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=SOCIAL)
     rating = models.DecimalField(default=0.0, max_digits=2, decimal_places=1, blank=True, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
-    amazon_link = models.CharField(max_length=128)
+    amazon_link = models.CharField(max_length=512)
