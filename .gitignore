@@ -1,2 +1,4 @@
 .vscode/settings.json
 api/*/__pycache__/
+api/db.sqlite3
+.env
