@@ -14,6 +14,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(utxt_lazy('last name'), max_length=32, blank=True)
     date_joined = models.DateTimeField(utxt_lazy('date joined'), auto_now_add=True)
     is_active = models.BooleanField(utxt_lazy('active'), default=True)
+    is_staff = models.BooleanField(utxt_lazy('staff status'), default=False)
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
 
     objects = UserManager()
